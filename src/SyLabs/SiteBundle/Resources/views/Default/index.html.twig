@@ -1,0 +1,26 @@
+{% extends 'SiteBundle::layout.html.twig' %}
+{% block head %}
+    {% block stylesheets %}
+        {% embed 'site/base/stylesheets.html.twig' %}
+        {% endembed %}
+    {% endblock %}
+{% endblock %}
+{% block body %}
+    <div class="loader-wrapper">
+        <div id="loader-image"></div>
+    </div>
+    <div class="wrapper">
+        <div class="inner-wrapper">
+            {% include 'site/block/header.html.twig' %}
+        </div>
+    </div>
+    {% embed 'site/block/content.html.twig' %}
+        {% block banner %}
+            {% include 'site/component/banner.html.twig' %}
+        {% endblock %}
+    {% endembed %}
+{% endblock %}
+{% block javascripts %}
+    {% embed 'site/base/javascript.html.twig' %}
+    {% endembed %}
+{% endblock %}
